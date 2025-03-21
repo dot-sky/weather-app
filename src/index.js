@@ -1,4 +1,4 @@
 import "./style.css";
-import { test } from "./module.js";
+import { getInfo } from "./weather.js";
 
-console.log(test);
+// const data = getInfo("london").then((res) => console.log(res));
