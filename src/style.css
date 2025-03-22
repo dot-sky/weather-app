@@ -1,3 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+:root {
+  --black: #040403ff;
+  --primary: #696969;
+  --secondary: #82b08cff;
+  --accent: #9ddbadff;
+  --accent-second: #c3e8bdff;
+
+  --bg: #f6f6f6;
+  --bg-light: #fafafa;
+  --bg-dark: #eaeaea;
+
+  --space-1x: 8px;
+  --space-2x: 16px;
+  --space-3x: 24px;
+  --space-4x: 32px;
+  --space-5x: 40px;
+}
+
 body {
-  background-color: blue;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+
+  height: 100vh;
+  color: var(--primary);
+  background-color: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fonts */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+}
+
+html {
+  font-size: 100%;
+} /* 16px */
+
+h1 {
+  font-size: 2.489rem; /* 39.84px */
+}
+
+h2,
+.h2 {
+  font-size: 2.074rem; /* 33.12px */
+}
+
+h3,
+.h3 {
+  font-size: 1.728rem; /* 27.68px */
+}
+
+h4,
+.h4 {
+  font-size: 1.44rem; /* 23.04px */
+}
+
+h5,
+.h5 {
+  font-size: 1.2rem; /* 19.2px */
+}
+
+small {
+  font-size: 0.833rem; /* 13.28px */
+}
+
+.temp-display {
+  font-size: 5rem;
+  margin: var(--space-1x) auto;
+}
+
+/* Main container */
+.main-container {
+  width: 70vw;
+  max-width: 1300px;
+
+  min-height: 500px;
+  height: 80vh;
+  max-height: 760px;
+
+  /* height: min(760px, max(500px, 80vh)); */
+  background-color: var(--bg-light);
+  border-radius: var(--space-3x);
+  padding: var(--space-4x);
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav input {
+  font-size: 100%;
+  background-color: white;
+  border: 1px solid var(--bg-dark);
+  border-radius: var(--space-2x);
+  padding: var(--space-1x);
+}
+/* Nav buttons */
+
+/* Location */
+.location-wrapper {
+  text-align: center;
+}
+/* dashboard */
+.dashboard-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: stretch;
+  flex-grow: 1;
+}
+
+/* Forecast wrapper */
+.forecast-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-4x);
+}
+
+.forecast-wrapper .detail-wrapper,
+.forecast-wrapper .limit-temp-forecast {
+  display: flex;
+  gap: var(--space-2x);
+}
+
+/* Week forecast   */
+.week-forecast {
+  margin-top: var(--space-4x);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2x);
+}
+.day-forecast {
+  border: 1px solid var(--primary);
+  border-radius: var(--space-2x);
+  padding: var(--space-2x);
+  text-align: center;
+}
+.day-forecast-temp {
+  font-weight: bold;
+  font-size: larger;
 }
