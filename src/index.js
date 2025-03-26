@@ -28,7 +28,7 @@ class WeatherApp {
     this.forecast = processedData;
     this.selectedDay = 0;
     this.unitGroup = "us";
-    this.place = "";
+    this.location = "";
 
     this.cacheDOM();
     this.attachEvents();
@@ -56,7 +56,7 @@ class WeatherApp {
   }
   // Events
   attachEvents() {
-    this.searchBtn.addEventListener("click", () => this.fetchForecast());
+    this.searchBtn.addEventListener("click", () => this.updateLocation());
     this.celsiusBtn.addEventListener("click", () =>
       this.clickUnitGroupBtn("metric")
     );
@@ -65,12 +65,15 @@ class WeatherApp {
     );
   }
 
+  updateLocation() {
+    this.location = this.searchBox.value;
+    this.fetchForecast();
+  }
+
   async fetchForecast() {
-    this.place = this.searchBox.value;
-    console.log(this.place);
-    this.forecast = await getForecast(this.place, this.unitGroup);
+    this.forecast = await getForecast(this.location, this.unitGroup);
+
     this.renderApp();
-    console.log(this.forecast);
   }
 
   clickUnitGroupBtn(unit) {
@@ -82,10 +85,10 @@ class WeatherApp {
       this.fahrenheitBtnLabel.classList.remove("checked");
     }
 
-    this.setUnitGroup(unit);
+    this.updateUnitGroup(unit);
   }
 
-  setUnitGroup(unitGroup) {
+  updateUnitGroup(unitGroup) {
     if (this.unitGroup !== unitGroup) {
       this.unitGroup = unitGroup;
       this.fetchForecast();
