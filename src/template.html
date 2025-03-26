@@ -11,40 +11,36 @@
     <div class="main-container">
         <nav>
             <div class="search-box">
-                <input type="text">
+                <input id="search" type="text">
                 <button class="search-icon">Search</Button>
             </div>
             <div class="temp-selector">
-                <button>C°</button>
-                <button>F°</button>
+                <button id="celsius-btn">C°</button>
+                <button id="fahrenheit-btn">F°</button>
             </div>
         </nav>
         <div class="dashboard-wrapper">
             <main>
                 <div class="location-wrapper">
-                    <p>Saturday,22 March 2024</p>
-                    <h4>London, United Kingdom</h4>
+                    <p class="forecast-date">Saturday,22 March 2024</p>
+                    <h4 class="forecast-location">London, United Kingdom</h4>
                 </div>
                 <div class="forecast-wrapper">
                     <div class="forecast-main">
-                        <div id="temp-forecast" class="temp-display">20°</div>
-                        <span>Mainly cloudy day</span>
+                        <div id="forecast-temp" class="temp-display">20°</div>
+                        <span class="forecast-desc">Mainly cloudy day</span>
                         <div class="limit-temp-forecast">
-                            <span>high: 25</span>
-                            <span>low: 25</span>
+                            <span>
+                                <span>Max:</span>
+                                <span id="max-temp">32</span>
+                            </span>
+                            <span>
+                                <span>Min:</span>
+                                <span id="min-temp">89</span>
+                            </span>
                         </div>
                     </div>
                     <div class="forecast-details">
-                        <div class="detail-wrapper">
-                            <span class="icon-wrapper"></span>
-                            <span class="detail-desc">Wind</span>
-                            <span class="detail-value">34-mph</span>
-                        </div>
-                        <div class="detail-wrapper">
-                            <span class="icon-wrapper"></span>
-                            <span class="detail-desc">Wind</span>
-                            <span class="detail-value">34-mph</span>
-                        </div>
                         <div class="detail-wrapper">
                             <span class="icon-wrapper"></span>
                             <span class="detail-desc">Wind</span>

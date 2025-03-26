@@ -3,9 +3,9 @@ const KEY = "C2DGGA55DLBUPSUVXTRCWG5T5";
 const BASE_URL =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
 
-async function getInfo(city) {
+async function getForecast(city, unitGroup) {
   try {
-    const url = addKey(BASE_URL + city);
+    const url = buildURLRequest(city, unitGroup);
     const response = await fetch(url);
     if (response.ok) {
       const json = await response.json();
@@ -30,10 +30,18 @@ function processInfo(json) {
   return weatherDetails;
 }
 
-function addKey(url) {
-  return url + "?key=" + KEY;
+function encode(input) {
+  const value = input.trim().toLowerCase();
+
+  return encodeURI(value);
+}
+
+function buildURLRequest(city, unitGroup) {
+  const URL =
+    BASE_URL + encode(city) + "?key=" + KEY + "&unitGroup=" + unitGroup;
+  return URL;
 }
 
 // processInfo(data);
 
-export { getInfo };
+export { getForecast };
