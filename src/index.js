@@ -27,7 +27,8 @@ class WeatherApp {
     this.doc = doc;
     this.forecast = processedData;
     this.selectedDay = 0;
-    this.unitGroup = "metric";
+    this.unitGroup = "us";
+    this.place = "";
 
     this.cacheDOM();
     this.attachEvents();
@@ -36,8 +37,10 @@ class WeatherApp {
   cacheDOM() {
     this.searchBox = this.doc.querySelector("#search");
     this.searchBtn = this.doc.querySelector(".search-icon");
-    this.celsiusBtn = this.doc.querySelector("#celsius-btn");
-    this.fahrenheitBtn = this.doc.querySelector("#fahrenheit-btn");
+    this.celsiusBtn = this.doc.querySelector("#celsius");
+    this.celsiusBtnLabel = this.doc.querySelector("#celsius-label");
+    this.fahrenheitBtn = this.doc.querySelector("#fahrenheit");
+    this.fahrenheitBtnLabel = this.doc.querySelector("#fahrenheit-label");
 
     this.date = this.doc.querySelector(".forecast-date");
     this.locationDesc = this.doc.querySelector(".forecast-location");
@@ -55,21 +58,38 @@ class WeatherApp {
   attachEvents() {
     this.searchBtn.addEventListener("click", () => this.fetchForecast());
     this.celsiusBtn.addEventListener("click", () =>
-      this.setUnitGroup("metric")
+      this.clickUnitGroupBtn("metric")
     );
-    this.fahrenheitBtn.addEventListener("click", () => this.setUnitGroup("us"));
+    this.fahrenheitBtn.addEventListener("click", () =>
+      this.clickUnitGroupBtn("us")
+    );
   }
 
   async fetchForecast() {
-    const place = this.searchBox.value;
-    console.log(place);
-    this.forecast = await getForecast(place, this.unitGroup);
+    this.place = this.searchBox.value;
+    console.log(this.place);
+    this.forecast = await getForecast(this.place, this.unitGroup);
     this.renderApp();
     console.log(this.forecast);
   }
 
+  clickUnitGroupBtn(unit) {
+    if (unit === "us") {
+      this.fahrenheitBtnLabel.classList.add("checked");
+      this.celsiusBtnLabel.classList.remove("checked");
+    } else {
+      this.celsiusBtnLabel.classList.add("checked");
+      this.fahrenheitBtnLabel.classList.remove("checked");
+    }
+
+    this.setUnitGroup(unit);
+  }
+
   setUnitGroup(unitGroup) {
-    this.unitGroup = unitGroup;
+    if (this.unitGroup !== unitGroup) {
+      this.unitGroup = unitGroup;
+      this.fetchForecast();
+    }
   }
   // Events end
   renderApp() {

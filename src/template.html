@@ -15,8 +15,10 @@
                 <button class="search-icon">Search</Button>
             </div>
             <div class="temp-selector">
-                <button id="celsius-btn">C°</button>
-                <button id="fahrenheit-btn">F°</button>
+                <input type="radio" id="fahrenheit" name="unit" value="fahrenheit" checked>
+                <label for="fahrenheit" id="fahrenheit-label" class="radio-label h5 checked">°F</label>
+                <input type="radio" id="celsius" name="unit" value="celsius">
+                <label for="celsius" id="celsius-label" class="radio-label h5">°C</label>
             </div>
         </nav>
         <div class="dashboard-wrapper">
