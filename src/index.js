@@ -1,6 +1,7 @@
 import "./style.css";
 import { getForecast } from "./weather.js";
 import { processedData } from "./test.js";
+
 console.log(processedData);
 
 // const data = getForecast("london").then((res) => console.log(res));
@@ -23,16 +24,32 @@ class WeatherApp {
     },
   };
 
+  static #icons = WeatherApp.#importAssets(
+    require.context("./assets/forecast", false, /\.(svg)$/)
+  );
+  static #uiIcons = WeatherApp.#importAssets(
+    require.context("./assets/icons", false, /\.(svg)$/)
+  );
+
+  static #importAssets(files) {
+    let assets = {};
+    files.keys().forEach((item) => {
+      const name = item.replace("./", "");
+      assets[name.replace(".svg", "")] = files(item);
+    });
+    return assets;
+  }
   constructor(doc) {
     this.doc = doc;
     this.forecast = processedData;
     this.selectedDay = 0;
     this.unitGroup = "us";
-    this.location = "";
+    this.location = "london";
 
     this.cacheDOM();
     this.attachEvents();
     this.renderApp();
+    console.log(WeatherApp.#icons);
   }
   cacheDOM() {
     this.searchBox = this.doc.querySelector("#search");
@@ -44,6 +61,7 @@ class WeatherApp {
 
     this.date = this.doc.querySelector(".forecast-date");
     this.locationDesc = this.doc.querySelector(".forecast-location");
+    this.forecastMainIcon = this.doc.querySelector("#forecast-icon-day");
     this.forecastTemp = this.doc.querySelector("#forecast-temp");
     this.forecastDesc = this.doc.querySelector(".forecast-desc");
     this.limitTempWrapper = this.doc.querySelector(".limit-temp-forecast");
@@ -54,6 +72,7 @@ class WeatherApp {
     this.weekForecast = this.doc.querySelector(".week-forecast");
     this.hourForecast = this.doc.querySelector(".hour-forecast");
   }
+
   // Events
   attachEvents() {
     this.searchBtn.addEventListener("click", () => this.updateLocation());
@@ -94,6 +113,7 @@ class WeatherApp {
       this.fetchForecast();
     }
   }
+
   // Events end
   renderApp() {
     this.renderForecast();
@@ -103,7 +123,8 @@ class WeatherApp {
 
   renderForecast() {
     const today = this.forecast.days[this.selectedDay];
-    console.log(today);
+    this.forecastMainIcon.setAttribute("src", WeatherApp.#icons[today.icon]);
+
     this.locationDesc.textContent = this.forecast.resolvedAddress;
     this.forecastTemp.textContent = this.formatValue("temp", today.temp);
     this.forecastDesc.textContent = today.description;
@@ -127,7 +148,7 @@ class WeatherApp {
 
   createForecastElement(element) {
     const wrapper = this.doc.createElement("div");
-    const iconWrapper = this.doc.createElement("span");
+    const icon = this.doc.createElement("img");
     const detailDesc = this.doc.createElement("span");
     const detailValue = this.doc.createElement("span");
 
@@ -136,13 +157,14 @@ class WeatherApp {
       element,
       this.forecast.days[this.selectedDay][element]
     );
+    icon.setAttribute("src", WeatherApp.#uiIcons[element]);
 
     wrapper.classList.add("detail-wrapper");
-    iconWrapper.classList.add("icon-wrapper");
+    icon.classList.add("icon-sm");
     detailDesc.classList.add("detail-desc");
     detailValue.classList.add("detail-value");
 
-    wrapper.appendChild(iconWrapper);
+    wrapper.appendChild(icon);
     wrapper.appendChild(detailDesc);
     wrapper.appendChild(detailValue);
 
@@ -163,17 +185,17 @@ class WeatherApp {
   createDayForecastElem(day) {
     const dayForecastElem = this.doc.createElement("div");
     const date = this.doc.createElement("div");
-    const icon = this.doc.createElement("div");
+    const icon = this.doc.createElement("img");
     const temp = this.doc.createElement("div");
 
     date.textContent = day.datetime;
-    icon.textContent = day.icon;
     temp.textContent = this.formatValue("temp", day.temp);
+    icon.setAttribute("src", WeatherApp.#icons[day.icon]);
 
     dayForecastElem.classList.add("day-forecast");
     date.classList.add("day-date");
     date.classList.add("h4");
-    icon.classList.add("day-icon");
+    icon.classList.add("icon-md");
     temp.classList.add("day-temp");
 
     dayForecastElem.appendChild(date);

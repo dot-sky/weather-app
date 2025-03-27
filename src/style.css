@@ -72,6 +72,16 @@ small {
   font-size: 0.833rem; /* 13.28px */
 }
 
+.icon-lg {
+  width: 80px;
+}
+.icon-md {
+  width: 40px;
+}
+.icon-sm {
+  width: 32px;
+}
+
 .temp-display {
   font-size: 5rem;
   margin: var(--space-1x) auto;
@@ -156,7 +166,11 @@ input[type="radio"] {
   display: flex;
   gap: var(--space-2x);
 }
-
+/* temp wrapper  */
+.temp-wrapper {
+  display: flex;
+  gap: var(--space-4x);
+}
 /* Week forecast   */
 .week-forecast {
   margin-top: var(--space-4x);
