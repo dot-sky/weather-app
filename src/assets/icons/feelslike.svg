@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_thermometer_4" transform="translate(574 293)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-574 -293)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_157" data-name="Group 157" transform="translate(228.421 -22.8)">
+      <path id="Path_215" data-name="Path 215" d="M84.48,1288.47a10,10,0,1,1-15.41-8.4v-21.86a5.405,5.405,0,1,1,10.81,0v21.85a10,10,0,0,1,4.6,8.41Z" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="4.21" height="12.82" transform="translate(-780.59 -249.82)" stroke-width="2" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" fill="#6d6e71"/>
+      <circle id="Ellipse_2" data-name="Ellipse 2" cx="6.36" cy="6.36" r="6.36" transform="translate(-784.78 -239.89)" stroke-width="2" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" fill="#6d6e71"/>
+    </g>
+  </g>
+</svg>

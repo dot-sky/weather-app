@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48.329" viewBox="0 0 48 48.329">
+  <g id="ic_weather_30" transform="translate(574 783)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-574 -783)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_46" data-name="Group 46" transform="translate(28.42 -9.75)">
+      <path id="Path_151" data-name="Path 151" d="M298.577,768.036a12.405,12.405,0,0,1-7.844,7.118,7.38,7.38,0,0,0-1.365-2.566,7.885,7.885,0,0,0-1.54-1.462,9,9,0,0,0-5.307-1.7,8.472,8.472,0,0,0-.881,0v-.01a7.834,7.834,0,0,0-5.307-7.224,8.792,8.792,0,0,0-1.462-.416,12.347,12.347,0,0,1,9.229-10.42,12.307,12.307,0,0,0,14.478,16.686Z" transform="translate(-853.997 -1522.6)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_152" data-name="Path 152" d="M211.117,787.612l-3.037,4.947h4.087l-4.087,6.1" transform="translate(-800.694 -1524.968)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_214" data-name="Line 214" x1="1.392" y2="2.473" transform="translate(-576.742 -737.597)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_215" data-name="Line 215" x1="1.733" y2="2.915" transform="translate(-581.035 -730.86)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_216" data-name="Line 216" x1="1.743" y2="2.905" transform="translate(-583.404 -735.615)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_217" data-name="Line 217" x1="1.743" y2="2.905" transform="translate(-586.907 -729.523)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_153" data-name="Path 153" d="M289.955,777.859c0,4.309-3.874,7.815-8.522,7.815H260.012a8.522,8.522,0,0,1-8.454-7.341,7.467,7.467,0,0,1-.077-1.143,8.512,8.512,0,0,1,8.532-8.483,8.415,8.415,0,0,1,3.5.755c.3-4.067,4.009-7.283,8.512-7.283a9.22,9.22,0,0,1,3.225.591A7.834,7.834,0,0,1,280.552,770v.1a8.488,8.488,0,0,1,.881,0,9,9,0,0,1,5.307,1.7,7.885,7.885,0,0,1,1.54,1.462,7.38,7.38,0,0,1,1.366,2.566A7.079,7.079,0,0,1,289.955,777.859Z" transform="translate(-852.9 -1523.195)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

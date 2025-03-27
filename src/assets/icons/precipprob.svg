@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_waters" transform="translate(280 1371)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-280 -1371)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_13" data-name="Group 13" transform="translate(22.39 1.08)">
+      <path id="Path_35" data-name="Path 35" d="M571.64,184.41h0L566.88,176l-4.77,8.37h0a5.36,5.36,0,1,0,9.52,0Z" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_36" data-name="Path 36" d="M587.24,181.67h0l-4.77-8.37-4.77,8.37h0a5.36,5.36,0,1,0,9.52,0Z" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_37" data-name="Path 37" d="M579.41,164.29h0l-4.77-8.37-4.77,8.37h0a5.36,5.36,0,1,0,9.52,0Z" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

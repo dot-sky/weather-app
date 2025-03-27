@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_half_sun" transform="translate(672 1371)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-672 -1371)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_10" data-name="Group 10" transform="translate(27.79 -1.51)">
+      <path id="Path_178" data-name="Path 178" d="M185.959,185.7H165.68a10.14,10.14,0,0,1,20.279,0Z" transform="translate(-851.609 -1520.779)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_281" data-name="Line 281" y2="4.778" transform="translate(-675.795 -1355.49)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_282" data-name="Line 282" x2="3.382" y2="3.382" transform="translate(-690.23 -1349.51)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_283" data-name="Line 283" x2="4.778" transform="translate(-696.211 -1335.074)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_284" data-name="Line 284" x2="4.789" transform="translate(-660.158 -1335.074)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_285" data-name="Line 285" y1="3.382" x2="3.382" transform="translate(-664.731 -1349.51)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_179" data-name="Path 179" d="M145.21,184.5h-42" transform="translate(-800 -1519.574)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

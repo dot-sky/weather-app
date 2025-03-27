@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_weather_46" transform="translate(770 489)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-770 -489)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_60" data-name="Group 60" transform="translate(33 -18.04)">
+      <path id="Path_41" data-name="Path 41" d="M93.63,1073.22c0,4.45-4,8.07-8.8,8.07H62.71a8.8,8.8,0,0,1-8.73-7.58,7.9,7.9,0,0,1-.08-1.18,8.79,8.79,0,0,1,8.81-8.75,8.681,8.681,0,0,1,3.61.77c.31-4.2,4.14-7.51,8.79-7.51a9.278,9.278,0,0,1,3.33.61,8.09,8.09,0,0,1,5.47,7.46v.1a8.944,8.944,0,0,1,.91,0,9.28,9.28,0,0,1,5.48,1.75,7.994,7.994,0,0,1,1.59,1.51,7.6,7.6,0,0,1,1.74,4.75Z" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_42" data-name="Path 42" d="M66.23,1081.23s9.47.13,14.56,0c4.61-.12,5.79-4.43,4.61-6.36s-5.41-1.06-4.18,2.37" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_43" data-name="Path 43" d="M68.67,1088H80.79c2.92,0,4.73,1.7,4.31,3.41" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_44" data-name="Path 44" d="M65.71,1084.92s13.62-.1,20,0c3.42.05,4.87,2,4.87,3.77a4.62,4.62,0,0,1-2.62,4.17" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

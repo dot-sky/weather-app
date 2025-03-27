@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_weather_3" transform="translate(280 1273)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-280 -1273)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_19" data-name="Group 19" transform="translate(22.66 -1.86)">
+      <path id="Path_143" data-name="Path 143" d="M597.972,274.629a12.4,12.4,0,0,1-7.843,7.116,7.379,7.379,0,0,0-1.365-2.566,7.881,7.881,0,0,0-1.539-1.462,8.995,8.995,0,0,0-5.306-1.7,8.494,8.494,0,0,0-.881,0v-.1a7.833,7.833,0,0,0-5.306-7.223,8.792,8.792,0,0,0-1.462-.416A12.345,12.345,0,0,1,583.5,257.86a12.5,12.5,0,0,0,14.475,16.769Z" transform="translate(-853.632 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_144" data-name="Path 144" d="M589.736,284.165c0,4.309-3.873,7.813-8.52,7.813H559.77a8.52,8.52,0,0,1-8.452-7.339,7.461,7.461,0,0,1-.077-1.142,8.51,8.51,0,0,1,8.53-8.482,8.415,8.415,0,0,1,3.5.755c.3-4.067,4.008-7.281,8.511-7.281a9.218,9.218,0,0,1,3.224.591,7.833,7.833,0,0,1,5.306,7.223v.1a8.467,8.467,0,0,1,.881,0,9,9,0,0,1,5.306,1.7,7.881,7.881,0,0,1,1.539,1.462,7.378,7.378,0,0,1,1.365,2.566A7.078,7.078,0,0,1,589.736,284.165Z" transform="translate(-852.9 -1522.338)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
