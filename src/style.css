@@ -3,6 +3,7 @@
 :root {
   --black: #040403ff;
   --primary: #696969;
+  --primary-500: #9b9b9b;
   --secondary: #82b08cff;
   --accent: #9ddbadff;
   --accent-second: #c3e8bdff;
@@ -11,13 +12,16 @@
   --bg-light: #fafafa;
   --bg-dark: #eaeaea;
 
+  --space-half: 4px;
   --space-1x: 8px;
   --space-2x: 16px;
   --space-3x: 24px;
   --space-4x: 32px;
   --space-5x: 40px;
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
@@ -68,7 +72,8 @@ h5,
   font-size: 1.2rem; /* 19.2px */
 }
 
-small {
+small,
+.small {
   font-size: 0.833rem; /* 13.28px */
 }
 
@@ -89,12 +94,12 @@ small {
 
 /* Main container */
 .main-container {
-  width: 70vw;
+  width: 75vw;
   max-width: 1300px;
 
-  min-height: 500px;
+  /* min-height: 500px;
   height: 80vh;
-  max-height: 760px;
+  max-height: 760px; */
 
   /* height: min(760px, max(500px, 80vh)); */
   background-color: var(--bg-light);
@@ -175,14 +180,23 @@ input[type="radio"] {
 .week-forecast {
   margin-top: var(--space-4x);
   display: flex;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
   gap: var(--space-2x);
 }
 .day-forecast {
+  width: 100px;
   border: 1px solid var(--primary);
   border-radius: var(--space-2x);
   padding: var(--space-2x);
   text-align: center;
+}
+.day-date {
+  color: var(--primary-500);
+  margin-top: var(--space-half);
+}
+.day-forecast > .icon-md {
+  padding: var(--space-1x) 0;
 }
 .day-forecast-temp {
   font-weight: bold;

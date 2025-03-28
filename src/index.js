@@ -1,5 +1,8 @@
-import "./style.css";
+import { format, parseISO } from "date-fns";
 import { getForecast } from "./weather.js";
+
+import "./style.css";
+
 import { processedData } from "./test.js";
 
 console.log(processedData);
@@ -123,6 +126,7 @@ class WeatherApp {
 
   renderForecast() {
     const today = this.forecast.days[this.selectedDay];
+    this.date.textContent = format(parseISO(today.datetime), "EEEE, d MMMM y ");
     this.forecastMainIcon.setAttribute("src", WeatherApp.#icons[today.icon]);
 
     this.locationDesc.textContent = this.forecast.resolvedAddress;
@@ -176,28 +180,36 @@ class WeatherApp {
 
     const days = this.forecast.days;
     for (let i = 0; i < 7; i++) {
-      const dayForecast = this.createDayForecastElem(days[i]);
+      const dayForecast = this.createDayForecastElem(days[i], i === 0);
       this.weekForecast.appendChild(dayForecast);
     }
   }
   renderHourlyForecast() {}
 
-  createDayForecastElem(day) {
+  createDayForecastElem(day, today) {
     const dayForecastElem = this.doc.createElement("div");
+    const dayTitle = this.doc.createElement("div");
     const date = this.doc.createElement("div");
     const icon = this.doc.createElement("img");
     const temp = this.doc.createElement("div");
 
-    date.textContent = day.datetime;
+    dayTitle.textContent = format(day.datetime, "eee");
+    if (today) {
+      dayTitle.textContent = "Today";
+    }
+
+    date.textContent = format(parseISO(day.datetime), "MMM d");
     temp.textContent = this.formatValue("temp", day.temp);
     icon.setAttribute("src", WeatherApp.#icons[day.icon]);
 
     dayForecastElem.classList.add("day-forecast");
+    dayTitle.classList.add("h5");
     date.classList.add("day-date");
-    date.classList.add("h4");
+    date.classList.add("small");
     icon.classList.add("icon-md");
     temp.classList.add("day-temp");
 
+    dayForecastElem.appendChild(dayTitle);
     dayForecastElem.appendChild(date);
     dayForecastElem.appendChild(icon);
     dayForecastElem.appendChild(temp);
