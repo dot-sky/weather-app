@@ -1,4 +1,4 @@
-import { format, parseISO } from "date-fns";
+import { format, parseISO, fromUnixTime } from "date-fns";
 import { getForecast } from "./weather.js";
 
 import "./style.css";
@@ -73,7 +73,7 @@ class WeatherApp {
 
     this.forecastDetails = this.doc.querySelector(".forecast-details");
     this.weekForecast = this.doc.querySelector(".week-forecast");
-    this.hourForecast = this.doc.querySelector(".hour-forecast");
+    this.hoursForecast = this.doc.querySelector(".hours-forecast");
   }
 
   // Events
@@ -94,7 +94,6 @@ class WeatherApp {
 
   async fetchForecast() {
     this.forecast = await getForecast(this.location, this.unitGroup);
-
     this.renderApp();
   }
 
@@ -122,6 +121,7 @@ class WeatherApp {
     this.renderForecast();
     this.renderForecastDetails();
     this.renderWeekForecast();
+    this.renderHoursForecast();
   }
 
   renderForecast() {
@@ -139,10 +139,22 @@ class WeatherApp {
   renderForecastDetails() {
     this.forecastDetails.textContent = "";
 
-    const realFeel = this.createForecastElement("feelslike");
-    const precipProb = this.createForecastElement("precipprob");
-    const humidity = this.createForecastElement("humidity");
-    const wind = this.createForecastElement("windspeed");
+    const realFeel = this.createForecastElement(
+      this.forecast.days[this.selectedDay],
+      "feelslike"
+    );
+    const precipProb = this.createForecastElement(
+      this.forecast.days[this.selectedDay],
+      "precipprob"
+    );
+    const humidity = this.createForecastElement(
+      this.forecast.days[this.selectedDay],
+      "humidity"
+    );
+    const wind = this.createForecastElement(
+      this.forecast.days[this.selectedDay],
+      "windspeed"
+    );
 
     this.forecastDetails.appendChild(realFeel);
     this.forecastDetails.appendChild(precipProb);
@@ -150,17 +162,14 @@ class WeatherApp {
     this.forecastDetails.appendChild(wind);
   }
 
-  createForecastElement(element) {
+  createForecastElement(forecast, element, short) {
     const wrapper = this.doc.createElement("div");
     const icon = this.doc.createElement("img");
     const detailDesc = this.doc.createElement("span");
     const detailValue = this.doc.createElement("span");
 
     detailDesc.textContent = element;
-    detailValue.textContent = this.formatValue(
-      element,
-      this.forecast.days[this.selectedDay][element]
-    );
+    detailValue.textContent = this.formatValue(element, forecast[element]);
     icon.setAttribute("src", WeatherApp.#uiIcons[element]);
 
     wrapper.classList.add("detail-wrapper");
@@ -169,7 +178,9 @@ class WeatherApp {
     detailValue.classList.add("detail-value");
 
     wrapper.appendChild(icon);
-    wrapper.appendChild(detailDesc);
+    if (!short) {
+      wrapper.appendChild(detailDesc);
+    }
     wrapper.appendChild(detailValue);
 
     return wrapper;
@@ -184,7 +195,16 @@ class WeatherApp {
       this.weekForecast.appendChild(dayForecast);
     }
   }
-  renderHourlyForecast() {}
+
+  renderHoursForecast() {
+    this.hoursForecast.textContent = "";
+
+    const day = this.forecast.days[this.selectedDay].hours;
+    for (const hour of day) {
+      const hourForecast = this.createHourForecastElem(hour);
+      this.hoursForecast.appendChild(hourForecast);
+    }
+  }
 
   createDayForecastElem(day, today) {
     const dayForecastElem = this.doc.createElement("div");
@@ -216,12 +236,49 @@ class WeatherApp {
 
     return dayForecastElem;
   }
-  createHourForecastElem() {}
+
+  createHourForecastElem(hour) {
+    const hourForecastElem = this.doc.createElement("div");
+    const hourElem = this.doc.createElement("span");
+    const icon = this.doc.createElement("img");
+    const temp = this.doc.createElement("span");
+    const wind = this.createForecastElement(hour, "windspeed", true);
+    const humidity = this.createForecastElement(hour, "humidity", true);
+
+    hourElem.textContent = this.formatHour(hour.datetime);
+    icon.setAttribute("src", WeatherApp.#icons[hour.icon]);
+    temp.textContent = this.formatValue("temp", hour.temp);
+
+    hourForecastElem.classList.add("hour-forecast");
+    hourElem.classList.add("hour");
+    icon.classList.add("icon-sm");
+    temp.classList.add("hour-temp");
+
+    hourForecastElem.appendChild(hourElem);
+    hourForecastElem.appendChild(icon);
+    hourForecastElem.appendChild(temp);
+    // hourForecastElem.appendChild(wind);
+    // hourForecastElem.appendChild(humidity);
+
+    return hourForecastElem;
+  }
 
   // Formatters
 
   formatValue(element, value) {
     return value + " " + WeatherApp.#units[this.unitGroup][element];
+  }
+  formatHour(hour) {
+    const hourISO = parseInt(hour.slice(0, 3));
+    let formattedHour = "";
+    if (hourISO === 12) {
+      formattedHour += 12 + " PM";
+    } else if (hourISO > 12) {
+      formattedHour += hourISO - 12 + " PM";
+    } else {
+      formattedHour += hourISO + " AM";
+    }
+    return formattedHour;
   }
 }
 
