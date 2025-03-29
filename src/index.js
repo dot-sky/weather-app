@@ -12,15 +12,17 @@ console.log(processedData);
 class WeatherApp {
   static #units = {
     us: {
-      temp: "°F",
-      feelslike: "°F",
+      templong: "°F",
+      temp: "°",
+      feelslike: "°",
       windspeed: "mph",
       humidity: "%",
       precipprob: "%",
     },
     metric: {
-      temp: "°C",
-      feelslike: "°C",
+      templong: "°C",
+      temp: "°",
+      feelslike: "°",
       windspeed: "kph",
       humidity: "%",
       precipprob: "%",
@@ -130,7 +132,7 @@ class WeatherApp {
     this.forecastMainIcon.setAttribute("src", WeatherApp.#icons[today.icon]);
 
     this.locationDesc.textContent = this.forecast.resolvedAddress;
-    this.forecastTemp.textContent = this.formatValue("temp", today.temp);
+    this.forecastTemp.textContent = this.formatValue("templong", today.temp);
     this.forecastDesc.textContent = today.description;
     this.todayMaxTemp.textContent = this.formatValue("temp", today.tempmax);
     this.todayMinTemp.textContent = this.formatValue("temp", today.tempmin);
@@ -266,7 +268,10 @@ class WeatherApp {
   // Formatters
 
   formatValue(element, value) {
-    return value + " " + WeatherApp.#units[this.unitGroup][element];
+    let formatted = value;
+    if (element === "windspeed" || element === "templong") formatted += " ";
+    formatted += WeatherApp.#units[this.unitGroup][element];
+    return formatted;
   }
   formatHour(hour) {
     const hourISO = parseInt(hour.slice(0, 3));
