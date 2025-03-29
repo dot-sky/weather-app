@@ -143,10 +143,7 @@ input[type="radio"] {
 .radio-label.checked {
   background-color: var(--bg-dark);
 }
-/* Location */
-.location-wrapper {
-  text-align: center;
-}
+
 /* dashboard */
 .dashboard-wrapper {
   display: grid;
@@ -155,9 +152,21 @@ input[type="radio"] {
   flex-grow: 1;
 }
 
+/* Location */
+.location-wrapper {
+  text-align: center;
+  margin: var(--space-3x) 0px;
+}
+
+.forecast-location {
+  margin-bottom: var(--space-1x);
+  font-weight: 500;
+}
+
 /* Forecast wrapper */
 .forecast-wrapper {
   display: grid;
+  align-items: center;
   grid-template-columns: 2fr 1fr;
   gap: var(--space-4x);
 }
@@ -168,9 +177,12 @@ input[type="radio"] {
   align-items: center;
 }
 .forecast-wrapper .detail-wrapper,
-.forecast-wrapper .limit-temp-forecast {
+.limit-temp-forecast {
   display: flex;
   gap: var(--space-2x);
+}
+.limit-temp-forecast {
+  margin-bottom: var(--space-1x);
 }
 /* temp wrapper  */
 .temp-wrapper {
