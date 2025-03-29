@@ -28,7 +28,13 @@ class WeatherApp {
       precipprob: "%",
     },
   };
-
+  static #elementsLabel = {
+    temp: "Temperature",
+    feelslike: "Real feel",
+    windspeed: "Wind",
+    humidity: "Humidity",
+    precipprob: "Precipitation",
+  };
   static #icons = WeatherApp.#importAssets(
     require.context("./assets/forecast", false, /\.(svg)$/)
   );
@@ -170,7 +176,7 @@ class WeatherApp {
     const detailDesc = this.doc.createElement("span");
     const detailValue = this.doc.createElement("span");
 
-    detailDesc.textContent = element;
+    detailDesc.textContent = WeatherApp.#elementsLabel[element];
     detailValue.textContent = this.formatValue(element, forecast[element]);
     icon.setAttribute("src", WeatherApp.#uiIcons[element]);
 
