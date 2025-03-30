@@ -1,13 +1,9 @@
-import { format, parseISO, fromUnixTime } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { getForecast } from "./weather.js";
 
 import "./style.css";
 
 import { processedData } from "./test.js";
-
-console.log(processedData);
-
-// const data = getForecast("london").then((res) => console.log(res));
 
 class WeatherApp {
   static #units = {
@@ -28,6 +24,7 @@ class WeatherApp {
       precipprob: "%",
     },
   };
+
   static #elementsLabel = {
     temp: "Temperature",
     feelslike: "Real feel",
@@ -35,21 +32,15 @@ class WeatherApp {
     humidity: "Humidity",
     precipprob: "Precipitation",
   };
+
   static #icons = WeatherApp.#importAssets(
     require.context("./assets/forecast", false, /\.(svg)$/)
   );
+
   static #uiIcons = WeatherApp.#importAssets(
     require.context("./assets/icons", false, /\.(svg)$/)
   );
 
-  static #importAssets(files) {
-    let assets = {};
-    files.keys().forEach((item) => {
-      const name = item.replace("./", "");
-      assets[name.replace(".svg", "")] = files(item);
-    });
-    return assets;
-  }
   constructor(doc) {
     this.doc = doc;
     this.forecast = processedData;
@@ -60,8 +51,8 @@ class WeatherApp {
     this.cacheDOM();
     this.attachEvents();
     this.updateWindow();
-    console.log(WeatherApp.#icons);
   }
+
   cacheDOM() {
     this.searchBox = this.doc.querySelector("#search");
     this.searchBtn = this.doc.querySelector(".search-btn");
@@ -260,8 +251,6 @@ class WeatherApp {
     const hourElem = this.doc.createElement("span");
     const icon = this.doc.createElement("img");
     const temp = this.doc.createElement("span");
-    const wind = this.createForecastElement(hour, "windspeed", true);
-    const humidity = this.createForecastElement(hour, "humidity", true);
 
     hourElem.textContent = this.formatHour(hour.datetime);
     icon.setAttribute("src", WeatherApp.#icons[hour.icon]);
@@ -275,8 +264,6 @@ class WeatherApp {
     hourForecastElem.appendChild(hourElem);
     hourForecastElem.appendChild(icon);
     hourForecastElem.appendChild(temp);
-    // hourForecastElem.appendChild(wind);
-    // hourForecastElem.appendChild(humidity);
 
     return hourForecastElem;
   }
@@ -289,6 +276,7 @@ class WeatherApp {
     formatted += WeatherApp.#units[this.unitGroup][element];
     return formatted;
   }
+
   formatHour(hour) {
     const hourISO = parseInt(hour.slice(0, 3));
     let formattedHour = "";
@@ -300,6 +288,16 @@ class WeatherApp {
       formattedHour += hourISO + " AM";
     }
     return formattedHour;
+  }
+  // Static functions
+
+  static #importAssets(files) {
+    let assets = {};
+    files.keys().forEach((item) => {
+      const name = item.replace("./", "");
+      assets[name.replace(".svg", "")] = files(item);
+    });
+    return assets;
   }
 }
 
