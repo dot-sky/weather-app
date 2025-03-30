@@ -231,7 +231,7 @@ class WeatherApp {
     const icon = this.doc.createElement("img");
     const temp = this.doc.createElement("div");
 
-    dayTitle.textContent = format(day.datetime, "eee");
+    dayTitle.textContent = format(parseISO(day.datetime), "eee");
     if (today) {
       dayTitle.textContent = "Today";
     }
