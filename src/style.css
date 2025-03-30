@@ -10,6 +10,7 @@
 
   --bg: #f6f6f6;
   --bg-light: #fafafa;
+  --bg-md: #f0f0f0;
   --bg-dark: #eaeaea;
 
   --space-half: 4px;
@@ -137,19 +138,25 @@ nav .search-box {
   padding: var(--space-1x);
   background-color: inherit;
 }
+
 .search-btn:hover {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-md);
   cursor: pointer;
 }
 
 nav input {
+  font-family: inherit;
+  color: inherit;
   font-size: 100%;
   background-color: white;
-  border: 1px solid var(--bg-dark);
+  border: 1px solid var(--primary-500);
   border-radius: var(--space-2x);
   padding: var(--space-1x);
 }
 
+nav input:focus-visible {
+  outline: 1px solid var(--primary);
+}
 /* Nav unit selector */
 input[type="radio"] {
   appearance: none;
@@ -169,7 +176,7 @@ input[type="radio"] {
 }
 
 .radio-label.checked {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-md);
 }
 
 /* dashboard */
@@ -243,7 +250,7 @@ aside {
 }
 .day-forecast {
   width: 100px;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--primary-500);
   border-radius: var(--space-2x);
   padding: var(--space-2x);
   text-align: center;
