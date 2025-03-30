@@ -4,6 +4,7 @@
   --black: #040403ff;
   --primary: #696969;
   --primary-500: #9b9b9b;
+  --primary-250: #bbbbbb;
   --secondary: #82b08cff;
   --accent: #9ddbadff;
   --accent-second: #c3e8bdff;
@@ -280,7 +281,6 @@ aside {
   overflow-y: auto;
 }
 .hour-forecast {
-  /* padding: var(--space-1x) 0px; */
   display: flex;
   align-items: center;
   gap: var(--space-4x);
@@ -291,4 +291,17 @@ aside {
 }
 .hour-temp {
   text-align: right;
+}
+
+/* Hours section scrollbar styling */
+.hours-forecast::-webkit-scrollbar {
+  width: 8px;
+}
+.hours-forecast::-webkit-scrollbar-track {
+  background: var(--bg-md);
+  border-radius: var(--space-6x);
+}
+.hours-forecast::-webkit-scrollbar-thumb {
+  background: var(--primary-250);
+  border-radius: var(--space-6x);
 }
