@@ -295,7 +295,7 @@ aside {
 
 /* Hours section scrollbar styling */
 .hours-forecast::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 .hours-forecast::-webkit-scrollbar-track {
   background: var(--bg-md);
