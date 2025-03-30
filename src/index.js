@@ -59,7 +59,7 @@ class WeatherApp {
 
     this.cacheDOM();
     this.attachEvents();
-    this.renderApp();
+    this.updateWindow();
     console.log(WeatherApp.#icons);
   }
   cacheDOM() {
@@ -102,7 +102,7 @@ class WeatherApp {
 
   async fetchForecast() {
     this.forecast = await getForecast(this.location, this.unitGroup);
-    this.renderApp();
+    this.updateWindow();
   }
 
   clickUnitGroupBtn(unit) {
@@ -124,8 +124,17 @@ class WeatherApp {
     }
   }
 
+  updateSelectedDay(index) {
+    this.selectDay(index);
+    this.updateWindow();
+  }
+
+  selectDay(index) {
+    if (index >= 0 && index < this.forecast.days.length)
+      this.selectedDay = index;
+  }
   // Events end
-  renderApp() {
+  updateWindow() {
     this.renderForecast();
     this.renderForecastDetails();
     this.renderWeekForecast();
@@ -200,6 +209,7 @@ class WeatherApp {
     const days = this.forecast.days;
     for (let i = 0; i < 7; i++) {
       const dayForecast = this.createDayForecastElem(days[i], i === 0);
+      dayForecast.addEventListener("click", () => this.updateSelectedDay(i));
       this.weekForecast.appendChild(dayForecast);
     }
   }

@@ -255,6 +255,7 @@ aside {
   border-radius: var(--space-2x);
   padding: var(--space-2x);
   text-align: center;
+  cursor: pointer;
 }
 .day-date {
   color: var(--primary-500);
