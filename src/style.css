@@ -218,19 +218,29 @@ aside {
 .forecast-main {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .forecast-wrapper .limit-temp-forecast {
+  align-self: center;
   display: flex;
   gap: var(--space-2x);
-}
-.limit-temp-forecast {
   margin: var(--space-1x) 0;
 }
 /* temp wrapper  */
 .temp-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
   gap: var(--space-4x);
+}
+
+.temp-wrapper > img {
+  justify-self: end;
+}
+
+.forecast-desc {
+  text-align: center;
+  min-height: 40px;
+  max-width: 509px;
 }
 /* Forecast element */
 .detail-wrapper {
