@@ -54,6 +54,7 @@ class WeatherApp {
   }
 
   cacheDOM() {
+    this.searchForm = this.doc.querySelector(".search-form");
     this.searchBox = this.doc.querySelector("#search");
     this.searchBtn = this.doc.querySelector(".search-btn");
     this.celsiusBtn = this.doc.querySelector("#celsius");
@@ -77,13 +78,29 @@ class WeatherApp {
 
   // Events
   attachEvents() {
-    this.searchBtn.addEventListener("click", () => this.updateLocation());
+    this.searchBtn.addEventListener("click", () => this.validateSearchInput());
     this.celsiusBtn.addEventListener("click", () =>
       this.clickUnitGroupBtn("metric")
     );
     this.fahrenheitBtn.addEventListener("click", () =>
       this.clickUnitGroupBtn("us")
     );
+    this.searchForm.addEventListener("submit", (event) =>
+      this.submitSearch(event)
+    );
+  }
+
+  validateSearchInput() {
+    if (this.searchBox.validity.valueMissing) {
+      this.searchBox.setCustomValidity("Type a place to know the forecast");
+    } else {
+      this.searchBox.setCustomValidity("");
+    }
+  }
+
+  submitSearch(event) {
+    event.preventDefault();
+    this.updateLocation();
   }
 
   updateLocation() {

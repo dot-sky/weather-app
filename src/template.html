@@ -10,10 +10,11 @@
 <body>
     <div class="main-container">
         <nav>
-            <div class="search-box">
-                <input id="search" type="text">
-                <button class="search-btn"><img class="icon-xs" src="./assets/interface/search.svg"></Button>
-            </div>
+            <form class="search-form">
+                <input id="search" type="text" required>
+                <button type="submit" class="search-btn"><img class="icon-xs"
+                        src="./assets/interface/search.svg"></Button>
+            </form>
             <div class="temp-selector">
                 <input type="radio" id="fahrenheit" name="unit" value="fahrenheit" checked>
                 <label for="fahrenheit" id="fahrenheit-label" class="radio-label h5 checked">°F</label>
