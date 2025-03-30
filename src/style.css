@@ -187,9 +187,9 @@ input[type="radio"] {
   display: flex;
   justify-content: space-between;
   gap: var(--space-3x);
-  /* align-items: stretch;
-  flex-grow: 1; */
+  margin-top: var(--space-1x);
 }
+
 aside {
   max-height: 100%;
   display: flex;
@@ -199,7 +199,7 @@ aside {
 /* Location */
 .location-wrapper {
   text-align: center;
-  margin: var(--space-4x) 0px;
+  margin-bottom: var(--space-4x);
 }
 
 .forecast-location {
@@ -322,6 +322,7 @@ aside {
 
 .error-box {
   text-align: center;
+  margin-top: var(--space-1x);
   color: var(--warning);
 }
 .hidden {
