@@ -243,11 +243,18 @@ class WeatherApp {
   renderHoursForecast() {
     this.hoursForecast.textContent = "";
 
-    const day = this.forecast.days[this.selectedDay].hours;
-    for (const hour of day) {
-      const hourForecast = this.createHourForecastElem(hour);
+    const hours = this.forecast.days[this.selectedDay].hours;
+    let hour6 = null;
+
+    for (let i in hours) {
+      const hourForecast = this.createHourForecastElem(hours[i]);
+      if (i == 6) {
+        hour6 = hourForecast;
+      }
       this.hoursForecast.appendChild(hourForecast);
     }
+
+    hour6.scrollIntoView();
   }
 
   createDayForecastElem(day, today) {
