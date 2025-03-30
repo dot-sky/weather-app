@@ -57,6 +57,8 @@ class WeatherApp {
     this.searchForm = this.doc.querySelector(".search-form");
     this.searchBox = this.doc.querySelector("#search");
     this.searchBtn = this.doc.querySelector(".search-btn");
+    this.errorBox = this.doc.querySelector(".error-box");
+    this.errorMsg = this.doc.querySelector("#error-msg");
     this.celsiusBtn = this.doc.querySelector("#celsius");
     this.celsiusBtnLabel = this.doc.querySelector("#celsius-label");
     this.fahrenheitBtn = this.doc.querySelector("#fahrenheit");
@@ -92,7 +94,7 @@ class WeatherApp {
 
   validateSearchInput() {
     if (this.searchBox.validity.valueMissing) {
-      this.searchBox.setCustomValidity("Type a place to know the forecast");
+      this.searchBox.setCustomValidity("Type a place to start");
     } else {
       this.searchBox.setCustomValidity("");
     }
@@ -100,17 +102,33 @@ class WeatherApp {
 
   submitSearch(event) {
     event.preventDefault();
-    this.updateLocation();
+    this.fetchForecast(this.searchBox.value);
   }
 
-  updateLocation() {
-    this.location = this.searchBox.value;
-    this.fetchForecast();
+  updateLocation(location) {
+    this.location = location;
   }
 
-  async fetchForecast() {
-    this.forecast = await getForecast(this.location, this.unitGroup);
-    this.updateWindow();
+  async fetchForecast(location = this.location) {
+    const res = await getForecast(location, this.unitGroup);
+    console.log(res);
+    if (res.response.ok) {
+      this.forecast = res.data;
+      this.updateLocation(location);
+
+      this.hideErrorMsg();
+      this.updateWindow();
+    } else {
+      this.handleInvalidRequest(location);
+    }
+  }
+
+  handleInvalidRequest(input) {
+    this.errorMsg.textContent = `We can't find the forecast for this place, try again or look for other location`;
+    this.errorBox.classList.remove("hidden");
+  }
+  hideErrorMsg() {
+    this.errorBox.classList.add("hidden");
   }
 
   clickUnitGroupBtn(unit) {

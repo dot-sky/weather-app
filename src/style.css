@@ -5,9 +5,11 @@
   --primary: #696969;
   --primary-500: #9b9b9b;
   --primary-250: #bbbbbb;
-  --secondary: #82b08cff;
-  --accent: #9ddbadff;
-  --accent-second: #c3e8bdff;
+  --secondary: #82b08c;
+  --accent: #9ddbad;
+  --accent-second: #c3e8bd;
+  --warning: #de6868;
+  --warning-500: #db9d9d;
 
   --bg: #f6f6f6;
   --bg-light: #fafafa;
@@ -127,7 +129,7 @@ nav {
   gap: var(--space-2x);
 }
 
-nav .search-box {
+nav .search-form {
   display: flex;
   align-items: center;
   gap: var(--space-1x);
@@ -315,4 +317,13 @@ aside {
 .hours-forecast::-webkit-scrollbar-thumb {
   background: var(--primary-250);
   border-radius: var(--space-6x);
+}
+/* Error box */
+
+.error-box {
+  text-align: center;
+  color: var(--warning);
+}
+.hidden {
+  visibility: hidden;
 }

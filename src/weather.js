@@ -7,10 +7,12 @@ async function getForecast(city, unitGroup) {
   try {
     const url = buildURLRequest(city, unitGroup);
     const response = await fetch(url);
+    console.log(response);
     if (response.ok) {
       const json = await response.json();
-      return processInfo(json);
+      return { response, data: processInfo(json) };
     }
+    return { response };
   } catch (error) {
     console.log(error);
     return "error";
