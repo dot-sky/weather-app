@@ -64,7 +64,7 @@ class WeatherApp {
   }
   cacheDOM() {
     this.searchBox = this.doc.querySelector("#search");
-    this.searchBtn = this.doc.querySelector(".search-icon");
+    this.searchBtn = this.doc.querySelector(".search-btn");
     this.celsiusBtn = this.doc.querySelector("#celsius");
     this.celsiusBtnLabel = this.doc.querySelector("#celsius-label");
     this.fahrenheitBtn = this.doc.querySelector("#fahrenheit");
@@ -176,7 +176,7 @@ class WeatherApp {
     const detailDesc = this.doc.createElement("span");
     const detailValue = this.doc.createElement("span");
 
-    detailDesc.textContent = WeatherApp.#elementsLabel[element];
+    detailDesc.textContent = WeatherApp.#elementsLabel[element] + ":";
     detailValue.textContent = this.formatValue(element, forecast[element]);
     icon.setAttribute("src", WeatherApp.#uiIcons[element]);
 
