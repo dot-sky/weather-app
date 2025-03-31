@@ -320,6 +320,6 @@ class WeatherApp {
   }
 }
 
-(function (document) {
-  const app = new WeatherApp(document);
+(function (doc) {
+  const app = new WeatherApp(doc);
 })(document);
