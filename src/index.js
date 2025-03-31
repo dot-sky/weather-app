@@ -1,5 +1,5 @@
 import { format, parseISO } from "date-fns";
-import { getForecast } from "./weather.js";
+import { EventsController } from "./EventsController.js";
 
 import "./style.css";
 
@@ -47,9 +47,10 @@ class WeatherApp {
     this.selectedDay = 0;
     this.unitGroup = "us";
     this.location = "london";
+    this.eventsController = new EventsController(this.doc);
 
     this.cacheDOM();
-    this.attachEvents();
+    this.bindEvents();
     this.updateWindow();
   }
 
@@ -57,19 +58,14 @@ class WeatherApp {
     this.searchForm = this.doc.querySelector(".search-form");
     this.searchBox = this.doc.querySelector("#search");
     this.searchBtn = this.doc.querySelector(".search-btn");
-    this.errorBox = this.doc.querySelector(".error-box");
-    this.errorMsg = this.doc.querySelector("#error-msg");
     this.celsiusBtn = this.doc.querySelector("#celsius");
-    this.celsiusBtnLabel = this.doc.querySelector("#celsius-label");
     this.fahrenheitBtn = this.doc.querySelector("#fahrenheit");
-    this.fahrenheitBtnLabel = this.doc.querySelector("#fahrenheit-label");
 
     this.date = this.doc.querySelector(".forecast-date");
     this.locationDesc = this.doc.querySelector(".forecast-location");
     this.forecastMainIcon = this.doc.querySelector("#forecast-icon-day");
     this.forecastTemp = this.doc.querySelector("#forecast-temp");
     this.forecastDesc = this.doc.querySelector(".forecast-desc");
-    this.limitTempWrapper = this.doc.querySelector(".limit-temp-forecast");
     this.todayMaxTemp = this.doc.querySelector("#max-temp");
     this.todayMinTemp = this.doc.querySelector("#min-temp");
 
@@ -79,75 +75,42 @@ class WeatherApp {
   }
 
   // Events
-  attachEvents() {
-    this.searchBtn.addEventListener("click", () => this.validateSearchInput());
+  bindEvents() {
+    this.searchBtn.addEventListener("click", () =>
+      this.eventsController.validateSearchInput(this.searchBox)
+    );
+
     this.celsiusBtn.addEventListener("click", () =>
-      this.clickUnitGroupBtn("metric")
+      this.eventsController.clickUnitGroupBtn(
+        "metric",
+        this.updateUnitGroup.bind(this)
+      )
     );
+
     this.fahrenheitBtn.addEventListener("click", () =>
-      this.clickUnitGroupBtn("us")
+      this.eventsController.clickUnitGroupBtn(
+        "us",
+        this.updateUnitGroup.bind(this)
+      )
     );
+
     this.searchForm.addEventListener("submit", (event) =>
-      this.submitSearch(event)
+      this.eventsController.submitSearch(
+        event,
+        this.unitGroup,
+        this.updateForecast.bind(this),
+        this.updateWindow.bind(this)
+      )
     );
   }
 
-  validateSearchInput() {
-    if (this.searchBox.validity.valueMissing) {
-      this.searchBox.setCustomValidity("Type a place to start");
-    } else {
-      this.searchBox.setCustomValidity("");
-    }
-  }
-
-  submitSearch(event) {
-    event.preventDefault();
-    this.fetchForecast(this.searchBox.value);
+  updateForecast(location, data) {
+    this.location = location;
+    this.forecast = data;
   }
 
   updateLocation(location) {
     this.location = location;
-  }
-
-  async fetchForecast(location = this.location) {
-    const res = await getForecast(location, this.unitGroup);
-    console.log(res);
-    if (res.response.ok) {
-      this.forecast = res.data;
-      this.updateLocation(location);
-
-      this.hideErrorMsg();
-      this.updateWindow();
-    } else {
-      this.handleInvalidRequest(location);
-    }
-  }
-
-  handleInvalidRequest(input) {
-    this.errorMsg.textContent = `We can't find the forecast for this place, try again or look for other location`;
-    this.errorBox.classList.remove("hidden");
-  }
-  hideErrorMsg() {
-    this.errorBox.classList.add("hidden");
-  }
-
-  clickUnitGroupBtn(unit) {
-    if (unit === "us") {
-      this.fahrenheitBtnLabel.classList.add("checked");
-      this.celsiusBtnLabel.classList.remove("checked");
-    } else {
-      this.celsiusBtnLabel.classList.add("checked");
-      this.fahrenheitBtnLabel.classList.remove("checked");
-    }
-
-    this.updateUnitGroup(unit);
-  }
-
-  updateUnitGroup(unitGroup) {
-    if (this.unitGroup !== unitGroup) {
-      this.unitGroup = unitGroup;
-      this.fetchForecast();
-    }
   }
 
   updateSelectedDay(index) {
@@ -159,6 +122,19 @@ class WeatherApp {
     if (index >= 0 && index < this.forecast.days.length)
       this.selectedDay = index;
   }
+
+  updateUnitGroup(unitGroup) {
+    if (this.unitGroup !== unitGroup) {
+      this.unitGroup = unitGroup;
+      this.eventsController.fetchForecast(
+        this.location,
+        this.unitGroup,
+        this.updateForecast.bind(this),
+        this.updateWindow.bind(this)
+      );
+    }
+  }
+
   // Events end
   updateWindow() {
     this.renderForecast();
@@ -240,23 +216,6 @@ class WeatherApp {
     }
   }
 
-  renderHoursForecast() {
-    this.hoursForecast.textContent = "";
-
-    const hours = this.forecast.days[this.selectedDay].hours;
-    let hour6 = null;
-
-    for (let i in hours) {
-      const hourForecast = this.createHourForecastElem(hours[i]);
-      if (i == 6) {
-        hour6 = hourForecast;
-      }
-      this.hoursForecast.appendChild(hourForecast);
-    }
-
-    hour6.scrollIntoView();
-  }
-
   createDayForecastElem(day, today) {
     const dayForecastElem = this.doc.createElement("div");
     const dayTitle = this.doc.createElement("div");
@@ -286,6 +245,23 @@ class WeatherApp {
     dayForecastElem.appendChild(temp);
 
     return dayForecastElem;
+  }
+
+  renderHoursForecast() {
+    this.hoursForecast.textContent = "";
+
+    const hours = this.forecast.days[this.selectedDay].hours;
+    let hour6 = null;
+
+    for (let i in hours) {
+      const hourForecast = this.createHourForecastElem(hours[i]);
+      if (i == 6) {
+        hour6 = hourForecast;
+      }
+      this.hoursForecast.appendChild(hourForecast);
+    }
+
+    hour6.scrollIntoView();
   }
 
   createHourForecastElem(hour) {
@@ -331,6 +307,7 @@ class WeatherApp {
     }
     return formattedHour;
   }
+
   // Static functions
 
   static #importAssets(files) {
