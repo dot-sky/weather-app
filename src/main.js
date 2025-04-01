@@ -252,6 +252,7 @@ class WeatherApp {
 
     const hours = this.forecast.days[this.selectedDay].hours;
     let hour6 = null;
+    let height = 48 * 6;
 
     for (let i in hours) {
       const hourForecast = this.createHourForecastElem(hours[i]);
@@ -260,8 +261,8 @@ class WeatherApp {
       }
       this.hoursForecast.appendChild(hourForecast);
     }
-
-    hour6.scrollIntoView();
+    this.hoursForecast.scrollTo(0, height);
+    // hour6.scrollIntoView();
   }
 
   createHourForecastElem(hour) {
