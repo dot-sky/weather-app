@@ -62,6 +62,7 @@ export class EventsController {
   }
 
   hideErrorMsg() {
+    this.errorMsg.textContent = `.`;
     this.errorBox.classList.add("hidden");
   }
 }
