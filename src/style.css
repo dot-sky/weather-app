@@ -115,12 +115,6 @@ small,
 /* Main container */
 .main-container {
   width: 1150px;
-
-  /* min-height: 500px;
-  height: 80vh;
-  max-height: 760px; */
-
-  /* height: min(760px, max(500px, 80vh)); */
   background-color: var(--bg-light);
   border-radius: var(--space-3x);
   padding: var(--space-5x);
@@ -134,14 +128,28 @@ small,
 nav {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  gap: var(--space-2x);
+  align-items: center;
+  gap: var(--space-4x);
 }
 
 nav .search-form {
   display: flex;
   align-items: center;
   gap: var(--space-1x);
+}
+
+.logo-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-half);
+}
+
+.logo-name-wrapper > img {
+  width: var(--icon-xs);
+}
+.app-name {
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .search-btn {
@@ -208,7 +216,6 @@ aside {
 /* Location */
 .location-wrapper {
   text-align: center;
-  margin-bottom: var(--space-4x);
 }
 
 .forecast-location {
@@ -392,6 +399,9 @@ aside {
 }
 
 @media screen and (max-width: 668px) {
+  nav {
+    gap: var(--space-2x);
+  }
   .temp-display {
     font-size: 3rem;
   }
@@ -428,6 +438,14 @@ aside {
   .hour-forecast div:nth-child(5) {
     display: none;
   }
+
+  .search-form {
+    width: 100%;
+  }
+  #search {
+    width: 100%;
+    min-width: 0px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -452,5 +470,44 @@ aside {
   .day-forecast .day-temp {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
+  }
+}
+
+@media screen and (max-width: 503px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  .search-form {
+    width: 100%;
+  }
+  #search {
+    width: 100%;
+    min-width: 0px;
+  }
+  .forecast-details {
+    justify-items: center;
+  }
+  .temp-wrapper {
+    gap: var(--space-2x);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-container {
+    padding: var(--space-4x);
+  }
+  .temp-display {
+    font-size: 2.5rem;
+  }
+  .forecast-location {
+    font-size: 1.2rem;
+  }
+  aside {
+    width: 100%;
+    max-width: none;
   }
 }
