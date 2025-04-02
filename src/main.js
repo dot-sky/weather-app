@@ -1,6 +1,5 @@
 import { format, parseISO } from "date-fns";
 import { EventsController } from "./EventsController.js";
-
 import "./style.css";
 
 import { processedData } from "./test.js";
@@ -270,6 +269,8 @@ class WeatherApp {
     const hourElem = this.doc.createElement("span");
     const icon = this.doc.createElement("img");
     const temp = this.doc.createElement("span");
+    const wind = this.createForecastElement(hour, "windspeed", true);
+    const precipProb = this.createForecastElement(hour, "precipprob", true);
 
     hourElem.textContent = this.formatHour(hour.datetime);
     icon.setAttribute("src", WeatherApp.#icons[hour.icon]);
@@ -283,6 +284,8 @@ class WeatherApp {
     hourForecastElem.appendChild(hourElem);
     hourForecastElem.appendChild(icon);
     hourForecastElem.appendChild(temp);
+    hourForecastElem.appendChild(wind);
+    hourForecastElem.appendChild(precipProb);
 
     return hourForecastElem;
   }
