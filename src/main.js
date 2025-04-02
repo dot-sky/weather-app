@@ -1,5 +1,5 @@
 import { format, parseISO } from "date-fns";
-import { EventsController } from "./EventsController.js";
+import { EventsController } from "./eventsController.js";
 import "./style.css";
 
 import { processedData } from "./test.js";
