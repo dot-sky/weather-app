@@ -1,4 +1,3 @@
-import { data } from "./test.js";
 const KEY = "C2DGGA55DLBUPSUVXTRCWG5T5";
 const BASE_URL =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
@@ -7,7 +6,6 @@ async function getForecast(city, unitGroup) {
   try {
     const url = buildURLRequest(city, unitGroup);
     const response = await fetch(url);
-    console.log(response);
     if (response.ok) {
       const json = await response.json();
       return { response, data: processInfo(json) };
@@ -28,7 +26,6 @@ function processInfo(json) {
     days: json.days,
   };
   weatherDetails.days[0] = today;
-  // console.log(weatherDetails);
   return weatherDetails;
 }
 
@@ -43,7 +40,5 @@ function buildURLRequest(city, unitGroup) {
     BASE_URL + encode(city) + "?key=" + KEY + "&unitGroup=" + unitGroup;
   return URL;
 }
-
-// processInfo(data);
 
 export { getForecast };
