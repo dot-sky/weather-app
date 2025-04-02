@@ -6,8 +6,8 @@ SkySense is a minimalistic, responsive weather app build with JavaScript, Webpac
 
 ## Features
 
-- Two unit groups available: Metric and US units. Change between them with a click!
-- Click on any of the upcoming days of the week to obtain a detailed information.
+- Two unit groups available: Metric and US units.
+- Click on any of the upcoming days of the week to obtain get detailed weather information.
 - Detailed weather information includes: wind speed, probability of precipitation, humidity, hourly weather, and more.
 - Responsive design.
 

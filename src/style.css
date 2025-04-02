@@ -46,6 +46,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 /* Fonts */
@@ -354,12 +355,32 @@ aside {
   visibility: hidden;
 }
 
+footer {
+  position: absolute;
+  bottom: 0px;
+
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: var(--space-2x);
+}
+footer a {
+  color: var(--primary);
+  font-weight: 600;
+}
 @media screen and (max-width: 1180px) {
   body {
     height: auto;
+    flex-direction: column;
   }
   .main-container {
     width: 878px;
+    margin-bottom: 0px;
+  }
+  footer {
+    position: static;
   }
   .dashboard-wrapper {
     flex-wrap: wrap;
