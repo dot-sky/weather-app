@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_celsius" transform="translate(371 1471)">
+    <rect id="Rectangle_5" data-name="Rectangle 5" width="48" height="48" transform="translate(-371 -1471)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_8" data-name="Group 8" transform="translate(31.18 0.67)">
+      <circle id="Ellipse_3" data-name="Ellipse 3" cx="7.28" cy="7.28" r="7.28" transform="translate(-400.18 -1468.67)" stroke-width="2" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path id="Path_226" data-name="Path 226" d="M495.83,90.82A16.23,16.23,0,0,1,484,96c-9.24,0-16.73-7.92-16.73-17.69s7.49-17.7,16.73-17.7A16.15,16.15,0,0,1,495,65" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_weather_10" transform="translate(770 1077)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-770 -1077)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_31" data-name="Group 31" transform="translate(32.09 -4.96)">
+      <path id="Path_27" data-name="Path 27" d="M94.54,472.14c0,4.45-4,8.07-8.8,8.07H63.62a8.8,8.8,0,0,1-8.73-7.58,7.9,7.9,0,0,1-.08-1.18,8.79,8.79,0,0,1,8.81-8.75,8.68,8.68,0,0,1,3.61.77c.31-4.2,4.14-7.51,8.79-7.51a9.279,9.279,0,0,1,3.33.61A8.09,8.09,0,0,1,84.83,464v.1a8.926,8.926,0,0,1,.91,0,9.28,9.28,0,0,1,5.48,1.75,8,8,0,0,1,1.59,1.51A7.6,7.6,0,0,1,94.54,472.14Z" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_62" data-name="Line 62" x1="1.8" y2="3" transform="translate(-784.07 -1041.22)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_63" data-name="Line 63" x1="1.8" y2="3" transform="translate(-788.66 -1033.57)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_64" data-name="Line 64" x1="1.82" y2="2.99" transform="translate(-780.53 -1038.21)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_65" data-name="Line 65" x1="1.82" y2="2.99" transform="translate(-784.28 -1032.06)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_66" data-name="Line 66" x1="1.81" y2="3" transform="translate(-773.67 -1041.22)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_67" data-name="Line 67" x1="1.8" y2="3" transform="translate(-778.26 -1033.57)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_sun" transform="translate(770 1371)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-770 -1371)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_7" data-name="Group 7" transform="translate(31.11 -1.51)">
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="9.429" cy="9.429" r="9.429" transform="translate(-786.533 -1354.924)" stroke-width="2" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <line id="Line_1" data-name="Line 1" y2="4.456" transform="translate(-777.104 -1364.49)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_2" data-name="Line 2" y2="4.456" transform="translate(-777.104 -1330.946)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_3" data-name="Line 3" x2="3.146" y2="3.146" transform="translate(-790.545 -1358.926)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_4" data-name="Line 4" x2="3.146" y2="3.146" transform="translate(-766.821 -1335.201)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_5" data-name="Line 5" x2="4.456" transform="translate(-796.11 -1345.495)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_6" data-name="Line 6" x2="4.445" transform="translate(-762.555 -1345.495)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_7" data-name="Line 7" y1="3.146" x2="3.146" transform="translate(-790.545 -1335.201)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_8" data-name="Line 8" y1="3.146" x2="3.146" transform="translate(-766.821 -1358.926)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

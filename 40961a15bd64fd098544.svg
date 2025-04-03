@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="ic_thermometer_1" transform="translate(280 293)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-280 -293)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_71" data-name="Group 71" transform="translate(21.801 -22.8)">
+      <path id="Path_224" data-name="Path 224" d="M585.1,1288.47a10,10,0,1,1-15.4-8.41V1258.2a5.4,5.4,0,1,1,10.8,0v21.86a10,10,0,0,1,4.6,8.41Z" transform="translate(-852.9 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_225" data-name="Path 225" d="M581,1290.91a6.35,6.35,0,0,1-11.74,0Z" transform="translate(-852.9 -1522)" fill="#6d6e71" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

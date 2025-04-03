@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48.242" viewBox="0 0 48 48.242">
+  <g id="ic_weather_45" transform="translate(280 587)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="48" height="48" transform="translate(-280 -587)" fill="#ffd2d2" opacity="0"/>
+    <g id="Group_59" data-name="Group 59" transform="translate(22.79 -15.61)">
+      <path id="Path_205" data-name="Path 205" d="M597.935,968.13a12.253,12.253,0,0,1-7.748,7.03,7.289,7.289,0,0,0-1.349-2.535,7.789,7.789,0,0,0-1.521-1.444,8.887,8.887,0,0,0-5.242-1.684,8.417,8.417,0,0,0-.87,0v-.1a7.739,7.739,0,0,0-5.271-7.088,8.687,8.687,0,0,0-1.444-.411,12.2,12.2,0,0,1,9.1-10.292,12.257,12.257,0,0,0,14.348,16.519Z" transform="translate(-853.916 -1522)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_206" data-name="Path 206" d="M589.113,977.976c0,4.257-3.826,7.719-8.418,7.719H559.537a8.418,8.418,0,0,1-8.351-7.251,7.367,7.367,0,0,1-.076-1.129,8.408,8.408,0,0,1,8.427-8.379,8.312,8.312,0,0,1,3.453.746c.3-4.017,3.96-7.193,8.408-7.193a9.107,9.107,0,0,1,3.185.583,7.739,7.739,0,0,1,5.242,7.136v.1a8.382,8.382,0,0,1,.87,0,8.887,8.887,0,0,1,5.242,1.684,7.787,7.787,0,0,1,1.521,1.444,7.288,7.288,0,0,1,1.349,2.535,6.993,6.993,0,0,1,.306,2.009Z" transform="translate(-852.9 -1522.473)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_302" data-name="Line 302" x2="1.588" y2="8.991" transform="translate(-276.776 -536.222)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_207" data-name="Path 207" d="M523.52,988.7l1.186.985.813-1.425" transform="translate(-801.1 -1523.593)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_208" data-name="Path 208" d="M524.79,995.827l.765-1.387,1.243,1" transform="translate(-801.155 -1523.861)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_303" data-name="Line 303" y1="1.904" x2="9.336" transform="translate(-280.65 -532.683)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_209" data-name="Path 209" d="M521.694,993.693l1.071-1.186-1.435-.737" transform="translate(-801.005 -1523.745)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_210" data-name="Path 210" d="M529.1,992.172l-1.406-.679,1.091-1.253" transform="translate(-801.281 -1523.679)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_304" data-name="Line 304" x1="2.583" y2="8.752" transform="translate(-290.952 -533.142)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_211" data-name="Path 211" d="M510.87,991.41l.612,1.416,1.368-.909" transform="translate(-800.55 -1523.73)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_212" data-name="Path 212" d="M508.81,998.359l1.3-.9.66,1.454" transform="translate(-800.46 -1523.993)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_305" data-name="Line 305" x2="9.202" y2="2.458" transform="translate(-294.262 -529.995)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_213" data-name="Path 213" d="M506.99,995.054l1.492-.583-.966-1.3" transform="translate(-800.381 -1523.806)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_214" data-name="Path 214" d="M514.3,997.015l-.957-1.234,1.53-.631" transform="translate(-800.657 -1523.892)" fill="none" stroke="#6d6e71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
