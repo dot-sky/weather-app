@@ -11,9 +11,9 @@ SkySense is a minimalistic, responsive weather app build with JavaScript, Webpac
 - Detailed weather information includes: wind speed, probability of precipitation, humidity, hourly weather, and more.
 - Responsive design.
 
-## Try it now!
+## Try it now
 
-Click here to get your weather forecast:
+Click here to get your weather forecast: [https://dot-sky.github.io/weather-app/](https://dot-sky.github.io/weather-app/)
 
 ## Installation
 
@@ -22,8 +22,8 @@ To set up the project locally, follow these steps:
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/dot-sky/todo-app.git
-   cd todo-app
+   git clone https://github.com/dot-sky/weather-app.git
+   cd weather-app
    ```
 
 2. Install dependencies:
@@ -42,6 +42,6 @@ To set up the project locally, follow these steps:
 
 ## Credits
 
-- Weather icons by <a href="https://uifresh.net/product/weather-icons/" title="weather icons">uifresh</a>
-- Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
-- Logo icon by <a href="https://www.flaticon.com/authors/icon-wind" title="logo icon">wind - Flaticon</a>
+- Weather icons by [uifresh](https://uifresh.net/product/weather-icons/)
+- Uicons by [flaticon](https://www.flaticon.com/uicons)
+- Logo icon by [wind - Flaticon](https://www.flaticon.com/authors/icon-wind)
