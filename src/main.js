@@ -2,8 +2,6 @@ import { format, parseISO } from "date-fns";
 import { EventsController } from "./eventsController.js";
 import "./style.css";
 
-import { processedData } from "./test.js";
-
 class WeatherApp {
   static #units = {
     us: {
@@ -42,7 +40,7 @@ class WeatherApp {
 
   constructor(doc) {
     this.doc = doc;
-    this.forecast = processedData;
+    this.forecast = "";
     this.selectedDay = 0;
     this.unitGroup = "us";
     this.location = "london";
@@ -50,7 +48,12 @@ class WeatherApp {
 
     this.cacheDOM();
     this.bindEvents();
-    this.updateWindow();
+    this.eventsController.fetchForecast(
+      this.location,
+      this.unitGroup,
+      this.updateForecast.bind(this),
+      this.updateWindow.bind(this)
+    );
   }
 
   cacheDOM() {
@@ -250,18 +253,13 @@ class WeatherApp {
     this.hoursForecast.textContent = "";
 
     const hours = this.forecast.days[this.selectedDay].hours;
-    let hour6 = null;
     let height = 48 * 6;
 
     for (let i in hours) {
       const hourForecast = this.createHourForecastElem(hours[i]);
-      if (i == 6) {
-        hour6 = hourForecast;
-      }
       this.hoursForecast.appendChild(hourForecast);
     }
     this.hoursForecast.scrollTo(0, height);
-    // hour6.scrollIntoView();
   }
 
   createHourForecastElem(hour) {

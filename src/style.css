@@ -312,11 +312,15 @@ aside {
   max-height: 460px;
   overflow-x: hidden;
   overflow-y: auto;
+
+  padding-right: var(--space-4x);
 }
 .hour-forecast {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr;
   align-items: center;
   gap: var(--space-4x);
+  /* padding-right: ; */
 }
 
 .hour-forecast div:nth-child(4),
@@ -394,6 +398,9 @@ footer a {
   aside {
     width: 480px;
   }
+  .hours-forecast {
+    padding-right: 0px;
+  }
   .hour-forecast {
     display: grid;
     grid-template-columns: 1fr 32px 1fr 3fr 3fr;
@@ -449,7 +456,7 @@ footer a {
     max-width: 230px;
   }
   .hours-forecast {
-    padding-right: var(--space-2x);
+    padding-right: var(--space-3x);
   }
   .hour-forecast {
     display: grid;
