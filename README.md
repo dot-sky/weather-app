@@ -44,4 +44,4 @@ To set up the project locally, follow these steps:
 
 - Weather icons by <a href="https://uifresh.net/product/weather-icons/" title="weather icons">uifresh</a>
 - Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
-- Logo icon by <a href="https://www.flaticon.com/free-icons/ui" title="logo icon">wind - Flaticon</a>
+- Logo icon by <a href="https://www.flaticon.com/authors/icon-wind" title="logo icon">wind - Flaticon</a>
